@@ -1,7 +1,7 @@
 // eslint-disable-next-line unicorn/import-style
 import { join } from 'path';
 
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -63,7 +63,8 @@ async function bootstrap(): Promise<void> {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('swagger', app, document);
   }
-
-  await app.listen(config.env.PORT);
+  const PORT = process.env.PORT || config.env.PORT;
+  await app.listen(PORT);
+  Logger.log(`server started at ${PORT}`);
 }
 bootstrap();

@@ -18,7 +18,7 @@ export class Accounts {
   @PrimaryGeneratedColumn('uuid')
   readonly id: number;
 
-  @Column({ type: 'money', nullable: false, default: 0.00 })
+  @Column({ default: 0, type: 'decimal', precision: 30, scale: 4 })
   balance: number;
 
   @OneToOne(() => User, (ac) => ac.account)

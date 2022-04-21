@@ -27,10 +27,7 @@ export class AccountService {
       };
     }
 
-    let balance = account.balance.toString();
-    balance = balance.replace('₦', '').replace(',', '');
-
-    await this.accountRepo.update({ id: account.id }, { balance: Number(balance) + amount });
+    await this.accountRepo.update({ id: account.id }, { balance: account.balance + amount });
 
     const tx = this.txRepo.create({
       txn_type: TXN_TYPE.credit,
@@ -39,7 +36,7 @@ export class AccountService {
       amount: amount,
       metadata,
       balance_before: account.balance,
-      balance_after: Number(balance) + amount,
+      balance_after: account.balance + amount,
     });
 
     await this.txRepo.save(tx);
@@ -61,17 +58,15 @@ export class AccountService {
       };
     }
 
-    let balance = account.balance.toString();
-    balance = balance.replace('₦', '').replace(',', '');
 
-    if (Number(balance) < amount) {
+    if (account.balance < amount) {
       return {
         success: false,
         error: 'Insufficient balance'
       };
     }
 
-    await this.accountRepo.update({ id: account.id }, { balance: Number(balance) - amount });
+    await this.accountRepo.update({ id: account.id }, { balance: account.balance - amount });
 
     const tx = this.txRepo.create({
       txn_type: TXN_TYPE.debit,
@@ -80,7 +75,7 @@ export class AccountService {
       amount: amount,
       metadata,
       balance_before: account.balance,
-      balance_after: Number(balance) - amount,
+      balance_after: account.balance - amount,
     });
 
     await this.txRepo.save(tx);

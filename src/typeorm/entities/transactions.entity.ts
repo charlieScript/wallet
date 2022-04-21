@@ -24,16 +24,16 @@ export class Transactions {
   @Column({})
   txn_purpose: TXN_PURPOSE;
 
-  @Column({ type: 'money', nullable: false })
+  @Column({ default: 0, type: 'decimal', precision: 30, scale: 4 })
   amount: number;
 
   @Column({ generated: 'uuid', unique: true })
   reference: string;
 
-  @Column({ type: 'money', nullable: false })
+  @Column({ default: 0, type: 'decimal', precision: 30, scale: 4 })
   balance_before: number;
 
-  @Column({ type: 'money', nullable: false })
+  @Column({ default: 0, type: 'decimal', precision: 30, scale: 4 })
   balance_after: number;
 
   @Column({ type: 'json' })

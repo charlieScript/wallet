@@ -17,7 +17,7 @@ export class Card_TX {
   @PrimaryGeneratedColumn('uuid')
   readonly id: number;
 
-  @Column({ type: 'money', nullable: false })
+  @Column({ default: 0, type: 'decimal', precision: 30, scale: 4 })
   amount: number;
 
   @Column({ generated: 'uuid', unique: true })

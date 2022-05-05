@@ -36,7 +36,7 @@ export class AuthController {
     status: 200,
     description: 'Login successfully',
   })
-  @ApiOperation({ summary: 'signup' })
+  @ApiOperation({ summary: 'login' })
   @Post('signin')
   async signIn(@Body() input: SignInInput): Promise<SignInResult> {
     return await this.authService.signIn(input);

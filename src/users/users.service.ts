@@ -24,10 +24,10 @@ export class UsersService {
     });
   }
 
-  async findOneByName(name: string): Promise<
+  async findOneByName(email: string): Promise<
     any> {
     const user = await this.usersRepo.findOne(
-      { name },
+      { email },
       { relations: ['account'] },
     );
     return user;

@@ -43,7 +43,8 @@ async function bootstrap(): Promise<void> {
   app.useStaticAssets(join(__dirname, '..', 'public'));
 
   if (config.env.SWAGGER_UI) {
-    const options = new DocumentBuilder().addTag('share')
+    const options = new DocumentBuilder()
+      .addTag('share')
       .setVersion('1.0')
       .setTitle('Fintech')
       .setDescription('The API documentation')

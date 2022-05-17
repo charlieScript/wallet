@@ -9,6 +9,7 @@ import {
   UpdateDateColumn,
   VersionColumn,
 } from 'typeorm';
+
 import { Accounts } from './accounts.entity';
 import { TXN_PURPOSE, TXN_TYPE } from './enums';
 import { User } from './users.entity';
@@ -50,5 +51,4 @@ export class Transactions {
 
   @VersionColumn()
   readonly version: number;
-
 }

@@ -9,6 +9,7 @@ import {
   UpdateDateColumn,
   VersionColumn,
 } from 'typeorm';
+
 import { Accounts } from './accounts.entity';
 
 @Entity('users')
@@ -39,5 +40,4 @@ export class User {
 
   @VersionColumn()
   readonly version: number;
-
 }

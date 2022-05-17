@@ -11,7 +11,7 @@ import * as postgres from './ormconfig.postgres';
 
 @Injectable()
 export class TypeOrmOptionsService implements TypeOrmOptionsFactory {
-  constructor(private readonly config: ConfigService) { }
+  constructor(private readonly config: ConfigService) {}
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
     Logger.debug('Init', this.constructor.name);

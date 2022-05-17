@@ -1,6 +1,6 @@
 import { Field, InputType } from '@nestjs/graphql';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsAlphanumeric, IsAscii, MinLength } from 'class-validator';
+import { IsAlphanumeric, IsAscii, IsEmail, MinLength } from 'class-validator';
 
 import { User } from '../../typeorm/entities/users.entity';
 
@@ -8,9 +8,9 @@ import { User } from '../../typeorm/entities/users.entity';
 export class SignInInput implements Partial<User> {
   @ApiProperty()
   @Field()
-  @IsAlphanumeric()
+  @IsEmail()
   @MinLength(1)
-  readonly name: string;
+  readonly email: string;
 
   @ApiProperty()
   @Field()

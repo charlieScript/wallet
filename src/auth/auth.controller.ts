@@ -18,7 +18,7 @@ import { SignUpInput } from './dto/sign-up-input.dto';
 @ApiTags('Admin Authentication Manager')
 @Controller('api/auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {}
 
   @ApiResponse({
     status: 200,
@@ -36,7 +36,7 @@ export class AuthController {
     status: 200,
     description: 'Login successfully',
   })
-  @ApiOperation({ summary: 'signup' })
+  @ApiOperation({ summary: 'login' })
   @Post('signin')
   async signIn(@Body() input: SignInInput): Promise<SignInResult> {
     return await this.authService.signIn(input);

@@ -93,7 +93,7 @@ describe('AuthService', () => {
     describe('when the user exists', () => {
       it('should return valid token', async () => {
         const input: SignInInput = {
-          name: 'a',
+          email: 'a',
           password: 'secret',
         };
         const user = plainToClass(User, {
@@ -114,7 +114,7 @@ describe('AuthService', () => {
         const sign = jest.spyOn(jwtService, 'sign').mockReturnValue(token);
 
         expect(await service.signIn(input)).toEqual(result);
-        expect(findOneByName.mock.calls[0][0]).toBe(input.name);
+        expect(findOneByName.mock.calls[0][0]).toBe(input.email);
 
         findOneByName.mockRestore();
         compare.mockRestore();
@@ -125,7 +125,7 @@ describe('AuthService', () => {
     describe('when the user does not exist', () => {
       it('should return empty token', async () => {
         const input: SignInInput = {
-          name: 'a',
+          email: 'a',
           password: 'secret',
         };
         const user = undefined;
@@ -136,7 +136,7 @@ describe('AuthService', () => {
           .mockReturnValue(new Promise<undefined>((resolve) => resolve(user)));
 
         expect(await service.signIn(input)).toEqual(result);
-        expect(findOneByName.mock.calls[0][0]).toBe(input.name);
+        expect(findOneByName.mock.calls[0][0]).toBe(input.email);
 
         findOneByName.mockRestore();
       });
@@ -145,7 +145,7 @@ describe('AuthService', () => {
     describe('when the password is invalid', () => {
       it('should return empty token', async () => {
         const input: SignInInput = {
-          name: 'a',
+          email: 'a',
           password: 'secret',
         };
         const user = plainToClass(User, {
@@ -163,7 +163,7 @@ describe('AuthService', () => {
         ).mockReturnValue(new Promise<boolean>((resolve) => resolve(false)));
 
         expect(await service.signIn(input)).toEqual(result);
-        expect(findOneByName.mock.calls[0][0]).toBe(input.name);
+        expect(findOneByName.mock.calls[0][0]).toBe(input.email);
         expect(compare.mock.calls[0][0]).toBe(input.password);
         expect(compare.mock.calls[0][1]).toBe(user.password);
 

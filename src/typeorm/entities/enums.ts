@@ -1,10 +1,10 @@
 export enum TXN_TYPE {
   debit,
-  credit
+  credit,
 }
 
 export enum TXN_PURPOSE {
   deposit,
   transfer,
-  reversal
+  reversal,
 }

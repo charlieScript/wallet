@@ -2,8 +2,9 @@ import { PassportModule } from '@nestjs/passport';
 import { Test, TestingModule } from '@nestjs/testing';
 import { plainToClass } from 'class-transformer';
 
-import { UsersController } from './users.controller';
 import { User } from '../typeorm/entities/users.entity';
+
+import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
 describe('Users Controller', () => {

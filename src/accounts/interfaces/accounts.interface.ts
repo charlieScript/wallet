@@ -1,8 +1,8 @@
-import { TXN_PURPOSE, TXN_TYPE } from "src/typeorm/entities/enums";
+import { TXN_PURPOSE, TXN_TYPE } from 'src/typeorm/entities/enums';
 
 export interface ICredit_TX {
-  amount: number,
-  purpose: TXN_PURPOSE,
+  amount: number;
+  purpose: TXN_PURPOSE;
   metadata: any;
 }
 
@@ -11,4 +11,3 @@ export interface ITX_RESPONSE {
   error?: string;
   message?: string;
 }
-

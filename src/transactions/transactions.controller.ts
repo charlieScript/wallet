@@ -1,6 +1,22 @@
-import { BadRequestException, Body, ClassSerializerInterceptor, Controller, Post, Request, UseGuards, UseInterceptors } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  BadRequestException,
+  Body,
+  ClassSerializerInterceptor,
+  Controller,
+  Post,
+  Request,
+  UseGuards,
+  UseInterceptors,
+} from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+
 import { SendTxDto } from './dtos/send.dto';
 import { ITX_SEND } from './interface/tx.inteface';
 import { TransactionsService } from './transactions.service';
@@ -8,8 +24,7 @@ import { TransactionsService } from './transactions.service';
 @ApiTags('Tx Manager')
 @Controller('tx')
 export class TransactionsController {
-  constructor(private readonly txService: TransactionsService) { }
-
+  constructor(private readonly txService: TransactionsService) {}
 
   @ApiResponse({
     status: 200,

@@ -4,9 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AuthOptionsService } from '../auth/auth-options.service';
 import { ConfigModule } from '../config/config.module';
+import { User } from '../typeorm/entities/users.entity';
 
 import { UsersController } from './users.controller';
-import { User } from '../typeorm/entities/users.entity';
 import { UsersService } from './users.service';
 
 @Module({
@@ -21,4 +21,4 @@ import { UsersService } from './users.service';
   providers: [UsersService],
   exports: [UsersService],
 })
-export class UsersModule { }
+export class UsersModule {}

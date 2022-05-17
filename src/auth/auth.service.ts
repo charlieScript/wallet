@@ -1,10 +1,15 @@
-import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import { AccountService } from '../accounts/accounts.service';
 import { Repository } from 'typeorm';
 
+import { AccountService } from '../accounts/accounts.service';
 import { User } from '../typeorm/entities/users.entity';
 import { UsersService } from '../users/users.service';
 
@@ -20,7 +25,7 @@ export class AuthService {
     private readonly usersService: UsersService,
     @InjectRepository(User)
     private readonly usersRepo: Repository<User>,
-  ) { }
+  ) {}
 
   async signUp(input: SignUpInput): Promise<any> {
     if (await this.usersService.findOneByName(input.email))
@@ -36,7 +41,7 @@ export class AuthService {
     return {
       email: result.email,
       name: result.name,
-      balance: account.balance
+      balance: account.balance,
     };
   }
 

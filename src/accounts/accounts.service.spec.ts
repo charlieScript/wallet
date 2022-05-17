@@ -1,16 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Accounts } from 'src/typeorm/entities/accounts.entity';
 import { Repository } from 'typeorm';
+
 import { AccountService } from './accounts.service';
 
 describe('AccountsService', () => {
   let service: AccountService;
-  let accountRepo: Repository<Accounts>
+  let accountRepo: Repository<Accounts>;
 
   beforeEach(async () => {
     const creditAccountMockValue = {
-      creditAccount: () => 'mock'
-    }
+      creditAccount: () => 'mock',
+    };
 
     const creditAccountMock = {
       provide: AccountService,
@@ -29,8 +30,6 @@ describe('AccountsService', () => {
   });
 
   describe('credit account with 500', () => {
-    it('credit', async () => {
-      
-    })
-  })
+    it('credit', async () => {});
+  });
 });

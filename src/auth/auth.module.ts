@@ -2,13 +2,13 @@ import { Module } from '@nestjs/common';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { AccountsModule } from '../accounts/accounts.module';
 import { AccountService } from '../accounts/accounts.service';
-import { Accounts } from '../typeorm/entities/accounts.entity';
-import { Transactions } from '../typeorm/entities/transactions.entity';
-
 import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
+import { Accounts } from '../typeorm/entities/accounts.entity';
+import { Transactions } from '../typeorm/entities/transactions.entity';
 import { User } from '../typeorm/entities/users.entity';
 import { UsersModule } from '../users/users.module';
 
@@ -38,10 +38,10 @@ import { MockStrategy } from './mock.strategy';
     TypeOrmModule.forFeature([User, Accounts, Transactions]),
     UsersModule,
     ConfigModule,
-    AccountsModule
+    AccountsModule,
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, MockStrategy, AccountService],
   exports: [AuthService],
 })
-export class AuthModule { }
+export class AuthModule {}

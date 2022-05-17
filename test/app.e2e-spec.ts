@@ -1,11 +1,13 @@
+import { type } from 'os';
+
 import { INestApplication, ParseUUIDPipe } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { UUIDVersion } from 'class-validator';
-import { type } from 'os';
 import { SignInInput } from 'src/auth/dto/sign-in-input.dto';
 import { SignUpInput } from 'src/auth/dto/sign-up-input.dto';
 import { User } from 'src/typeorm/entities/users.entity';
 import * as request from 'supertest';
+
 import { AppModule } from '../src/app.module';
 
 describe('AppController (e2e)', () => {
@@ -43,7 +45,7 @@ describe('AppController (e2e)', () => {
       .send(input)
       .expect(201);
     token = res.body.token as string;
-    expect(token).toMatchSnapshot()
+    expect(token).toMatchSnapshot();
   });
 
   it('GET /api/users', async () => {

@@ -18,7 +18,7 @@ import { SignUpInput } from './dto/sign-up-input.dto';
 @ApiTags('Admin Authentication Manager')
 @Controller('api/auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {}
 
   @ApiResponse({
     status: 200,

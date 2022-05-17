@@ -9,7 +9,7 @@ export class UsersService {
   constructor(
     @InjectRepository(User)
     private readonly usersRepo: Repository<User>,
-  ) { }
+  ) {}
 
   async findAll(): Promise<any[]> {
     const users = await this.usersRepo.find({ relations: ['account'] });
@@ -24,8 +24,7 @@ export class UsersService {
     });
   }
 
-  async findOneByName(email: string): Promise<
-    any> {
+  async findOneByName(email: string): Promise<any> {
     const user = await this.usersRepo.findOne(
       { email },
       { relations: ['account'] },

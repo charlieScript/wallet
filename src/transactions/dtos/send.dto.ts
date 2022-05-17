@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsEnum, IsNotEmpty, IsNumber, IsString } from "class-validator";
-import { TXN_PURPOSE } from "src/typeorm/entities/enums";
+import { TXN_PURPOSE } from "../../typeorm/entities/enums";
 
 export class SendTxDto {
   @ApiProperty({})

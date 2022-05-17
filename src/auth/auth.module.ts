@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AccountsModule } from 'src/accounts/accounts.module';
-import { AccountService } from 'src/accounts/accounts.service';
-import { Accounts } from 'src/typeorm/entities/accounts.entity';
-import { Transactions } from 'src/typeorm/entities/transactions.entity';
+import { AccountsModule } from '../accounts/accounts.module';
+import { AccountService } from '../accounts/accounts.service';
+import { Accounts } from '../typeorm/entities/accounts.entity';
+import { Transactions } from '../typeorm/entities/transactions.entity';
 
 import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';

@@ -2,7 +2,7 @@ import { BadRequestException, ConflictException, Injectable, NotFoundException }
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import { AccountService } from 'src/accounts/accounts.service';
+import { AccountService } from '../accounts/accounts.service';
 import { Repository } from 'typeorm';
 
 import { User } from '../typeorm/entities/users.entity';

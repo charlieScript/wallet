@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AccountService } from 'src/accounts/accounts.service';
-import { ITX_RESPONSE } from 'src/accounts/interfaces/accounts.interface';
-import { Accounts } from 'src/typeorm/entities/accounts.entity';
-import { Transactions } from 'src/typeorm/entities/transactions.entity';
-import { User } from 'src/typeorm/entities/users.entity';
+import { AccountService } from '../accounts/accounts.service';
+import { ITX_RESPONSE } from '../accounts/interfaces/accounts.interface';
+import { Accounts } from '../typeorm/entities/accounts.entity';
+import { Transactions } from '../typeorm/entities/transactions.entity';
+import { User } from '../typeorm/entities/users.entity';
 import { Connection, Repository } from 'typeorm';
 import { ITX_SEND } from './interface/tx.inteface';
 

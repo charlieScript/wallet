@@ -2,11 +2,11 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { randomUUID } from 'crypto';
 import { ICredit_TX, ITX_RESPONSE } from './interfaces/accounts.interface';
-import { Accounts } from 'src/typeorm/entities/accounts.entity';
-import { Transactions } from 'src/typeorm/entities/transactions.entity';
+import { Accounts } from '../typeorm/entities/accounts.entity';
+import { Transactions } from '../typeorm/entities/transactions.entity';
 import { FindOperator, Repository } from 'typeorm';
-import { User } from 'src/typeorm/entities/users.entity';
-import { TXN_PURPOSE, TXN_TYPE } from 'src/typeorm/entities/enums';
+import { User } from '../typeorm/entities/users.entity';
+import { TXN_PURPOSE, TXN_TYPE } from '../typeorm/entities/enums';
 
 @Injectable()
 export class AccountService {

@@ -1,109 +1,123 @@
 # NestJS starter
 
-[![CI status](https://github.com/twihike/nestjs-starter/workflows/ci/badge.svg)](https://github.com/twihike/nestjs-starter/actions)
+[![CI status](https://github.com/twihike/nestjs-starter/workflows/ci/badge.svg)](https://github.com/charlieScript/wallet/actions)
 
 [NestJS](https://github.com/nestjs/nest) framework starter repository.
 
 ## Technologies
 
-* Language
-  * Docs
-    * TypeScript: <https://www.typescriptlang.org/docs/>
-  * Packages
-    * typescript: <https://github.com/microsoft/TypeScript>
+- Language
 
-* Web Application Framework
-  * Docs
-    * NestJS: <https://docs.nestjs.com/>
-  * Packages
-    * @nestjs: <https://github.com/nestjs/nest>
+  - Docs
+    - TypeScript: <https://www.typescriptlang.org/docs/>
+  - Packages
+    - typescript: <https://github.com/microsoft/TypeScript>
 
-* Database Access
-  * Docs
-    * TypeORM: <https://typeorm.io/>
-      * Supports MySQL / Postgres / SQLite And more...
-      * Automatic migrations generation
-  * Packages
-    * @nestjs/typeorm: <https://github.com/nestjs/typeorm>
-    * typeorm: <https://github.com/typeorm/typeorm>
+- Web Application Framework
 
-* GraphQL
-  * Docs
-    * GraphQL: <https://graphql.org/learn/>
-    * Apollo: <https://www.apollographql.com/docs/>
-    * TypeGraphQL: <https://typegraphql.ml/>
-  * Packages
-    * @nestjs/graphql: <https://github.com/nestjs/graphql>
-    * apollo-server-express: <https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-express>
-    * graphql-tools: <https://github.com/apollographql/graphql-tools>
-    * graphql: <https://github.com/graphql/graphql-js>
-    * type-graphql: <https://github.com/19majkel94/type-graphql>
+  - Docs
+    - NestJS: <https://docs.nestjs.com/>
+  - Packages
+    - @nestjs: <https://github.com/nestjs/nest>
 
-* Validation
-  * class-validator: <https://github.com/typestack/class-validator>
+- Database Access
 
-* Serialization
-  * class-transformer: <https://github.com/typestack/class-transformer>
+  - Docs
+    - TypeORM: <https://typeorm.io/>
+      - Supports MySQL / Postgres / SQLite And more...
+      - Automatic migrations generation
+  - Packages
+    - @nestjs/typeorm: <https://github.com/nestjs/typeorm>
+    - typeorm: <https://github.com/typeorm/typeorm>
 
-* Security
-  * helmet: <https://github.com/helmetjs/helmet>
-  * bcrypt: <https://github.com/kelektiv/node.bcrypt.js>
-  * CORS: NestJS built-in
+- GraphQL
 
-* Authentication
-  * Docs
-    * JWT: <https://jwt.io/>
-    * JWT Node.js: <https://github.com/auth0/node-jsonwebtoken>
-    * Passport: <http://www.passportjs.org/>
-  * Packages
-    * @nestjs/passport: <https://github.com/nestjs/passport>
-    * passport: <https://github.com/jaredhanson/passport>
-    * @nestjs/jwt: <https://github.com/nestjs/jwt>
-    * passport-jwt: <https://github.com/mikenicholson/passport-jwt>
+  - Docs
+    - GraphQL: <https://graphql.org/learn/>
+    - Apollo: <https://www.apollographql.com/docs/>
+    - TypeGraphQL: <https://typegraphql.ml/>
+  - Packages
+    - @nestjs/graphql: <https://github.com/nestjs/graphql>
+    - apollo-server-express: <https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-express>
+    - graphql-tools: <https://github.com/apollographql/graphql-tools>
+    - graphql: <https://github.com/graphql/graphql-js>
+    - type-graphql: <https://github.com/19majkel94/type-graphql>
 
-* Health Check
-  * @nestjs/terminus: <https://github.com/nestjs/terminus>
-  * @godaddy/terminus: <https://github.com/godaddy/terminus>
+- Validation
 
-* 12-Factor based config
-  * `src/config/config.service.ts`
-  * `src/config/config.env.ts`
+  - class-validator: <https://github.com/typestack/class-validator>
 
-* Linter
-  * Docs
-    * ESLint: <https://eslint.org/>
-  * Packages
-    * eslint: <https://github.com/eslint/eslint>
-    * eslint-config-airbnb: <https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb>
-    * @typescript-eslint/parser: <https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser>
-    * @typescript-eslint/eslint-plugin: <https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin>
+- Serialization
 
-* Formatter
-  * Docs
-    * Prettier: <https://prettier.io/>
-  * Packages
-    * prettier: <https://github.com/prettier/prettier>
-    * eslint-config-prettier: <https://github.com/prettier/eslint-config-prettier>
+  - class-transformer: <https://github.com/typestack/class-transformer>
 
-* Test
-  * Docs
-    * Jest: <https://jestjs.io/>
-  * Packages
-    * jest: <https://github.com/facebook/jest>
+- Security
 
-* Documentation
-  * Docs
-    * Compodoc: <https://compodoc.app/>
-  * Packages
-    * @compodoc/compodoc: <https://github.com/compodoc/compodoc>
+  - helmet: <https://github.com/helmetjs/helmet>
+  - bcrypt: <https://github.com/kelektiv/node.bcrypt.js>
+  - CORS: NestJS built-in
 
-* Documentation OpenAPI
-  * Docs
-    * OpenAPI: <https://www.openapis.org/>
-    * Swagger UI: <https://swagger.io/tools/swagger-ui/>
-  * Packages
-    * @nestjs/swagger: <https://github.com/nestjs/swagger>
-    * swagger-ui-express: <https://github.com/scottie1984/swagger-ui-express>
+- Authentication
+
+  - Docs
+    - JWT: <https://jwt.io/>
+    - JWT Node.js: <https://github.com/auth0/node-jsonwebtoken>
+    - Passport: <http://www.passportjs.org/>
+  - Packages
+    - @nestjs/passport: <https://github.com/nestjs/passport>
+    - passport: <https://github.com/jaredhanson/passport>
+    - @nestjs/jwt: <https://github.com/nestjs/jwt>
+    - passport-jwt: <https://github.com/mikenicholson/passport-jwt>
+
+- Health Check
+
+  - @nestjs/terminus: <https://github.com/nestjs/terminus>
+  - @godaddy/terminus: <https://github.com/godaddy/terminus>
+
+- 12-Factor based config
+
+  - `src/config/config.service.ts`
+  - `src/config/config.env.ts`
+
+- Linter
+
+  - Docs
+    - ESLint: <https://eslint.org/>
+  - Packages
+    - eslint: <https://github.com/eslint/eslint>
+    - eslint-config-airbnb: <https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb>
+    - @typescript-eslint/parser: <https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser>
+    - @typescript-eslint/eslint-plugin: <https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin>
+
+- Formatter
+
+  - Docs
+    - Prettier: <https://prettier.io/>
+  - Packages
+    - prettier: <https://github.com/prettier/prettier>
+    - eslint-config-prettier: <https://github.com/prettier/eslint-config-prettier>
+
+- Test
+
+  - Docs
+    - Jest: <https://jestjs.io/>
+  - Packages
+    - jest: <https://github.com/facebook/jest>
+
+- Documentation
+
+  - Docs
+    - Compodoc: <https://compodoc.app/>
+  - Packages
+    - @compodoc/compodoc: <https://github.com/compodoc/compodoc>
+
+- Documentation OpenAPI
+  - Docs
+    - OpenAPI: <https://www.openapis.org/>
+    - Swagger UI: <https://swagger.io/tools/swagger-ui/>
+  - Packages
+    - @nestjs/swagger: <https://github.com/nestjs/swagger>
+    - swagger-ui-express: <https://github.com/scottie1984/swagger-ui-express>
 
 ## Installation
 

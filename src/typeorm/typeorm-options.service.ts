@@ -16,23 +16,18 @@ export class TypeOrmOptionsService implements TypeOrmOptionsFactory {
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
     Logger.debug('Init', this.constructor.name);
+    if (process.env.NODE_ENV === 'production') {
+      console.log('production');
 
-    if (this.config.env.TYPEORM_TYPE === 'auto') {
-      if (
-        this.config.env.NODE_ENV === 'development' ||
-        this.config.env.NODE_ENV === 'test'
-      ) {
-        return postgres;
-      }
-      if (this.config.env.NODE_ENV === 'production') {
-        return prod;
-      }
-      throw new Error(`Unknown NODE_ENV: ${this.config.env.NODE_ENV}`);
+      return prod;
     }
+    console.log('dev');
 
-    const ormOptions = {
-      postgres,
-    };
-    return ormOptions[this.config.env.TYPEORM_TYPE];
+    return postgres;
+
+    // const ormOptions = {
+    //   prod,
+    // };
+    // return ormOptions[this.config.env.TYPEORM_TYPE];
   }
 }

@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AccountsModule } from './accounts/accounts.module';
+import { AppController } from './app.controller';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from './config/config.module';
 import { TransactionsModule } from './transactions/transactions.module';
@@ -17,5 +18,6 @@ import { TypeOrmOptionsService } from './typeorm/typeorm-options.service';
     AccountsModule,
     TransactionsModule,
   ],
+  controllers: [AppController]
 })
-export class AppModule {}
+export class AppModule { }

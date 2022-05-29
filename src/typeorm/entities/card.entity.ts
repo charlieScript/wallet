@@ -10,6 +10,7 @@ import {
   UpdateDateColumn,
   VersionColumn,
 } from 'typeorm';
+
 import { Accounts } from './accounts.entity';
 
 @Entity('card_transactions')
@@ -37,5 +38,4 @@ export class Card_TX {
 
   @VersionColumn()
   readonly version: number;
-
 }

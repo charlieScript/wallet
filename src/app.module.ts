@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
+import { AccountsModule } from './accounts/accounts.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from './config/config.module';
-import { TypeOrmOptionsService } from './typeorm/typeorm-options.service';
-import { AccountsModule } from './accounts/accounts.module';
 import { TransactionsModule } from './transactions/transactions.module';
+import { TypeOrmOptionsService } from './typeorm/typeorm-options.service';
 
 @Module({
   imports: [
@@ -18,4 +18,4 @@ import { TransactionsModule } from './transactions/transactions.module';
     TransactionsModule,
   ],
 })
-export class AppModule { }
+export class AppModule {}

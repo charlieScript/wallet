@@ -13,12 +13,13 @@ import { ApiBasicAuth, ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 import { User } from '../typeorm/entities/users.entity';
+
 import { UsersService } from './users.service';
 
 @ApiTags('User Management')
 @Controller('api/users')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) { }
+  constructor(private readonly usersService: UsersService) {}
 
   @UseInterceptors(ClassSerializerInterceptor)
   @Get()
@@ -29,7 +30,9 @@ export class UsersController {
 
   @UseInterceptors(ClassSerializerInterceptor)
   @Get(':name')
-  async findOneByName(@Param('name') name: string): Promise<any | NotFoundException> {
+  async findOneByName(
+    @Param('name') name: string,
+  ): Promise<any | NotFoundException> {
     const user = await this.usersService.findOneByName(name);
     if (!user) {
       return new NotFoundException();
@@ -38,7 +41,7 @@ export class UsersController {
       id: user.id,
       email: user.email,
       name: user.name,
-      balance: user.account.balance
+      balance: user.account.balance,
     };
   }
 }

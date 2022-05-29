@@ -1,10 +1,15 @@
-import { BadRequestException, ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
-import { AccountService } from 'src/accounts/accounts.service';
 import { Repository } from 'typeorm';
 
+import { AccountService } from '../accounts/accounts.service';
 import { User } from '../typeorm/entities/users.entity';
 import { UsersService } from '../users/users.service';
 
@@ -20,20 +25,23 @@ export class AuthService {
     private readonly usersService: UsersService,
     @InjectRepository(User)
     private readonly usersRepo: Repository<User>,
-  ) { }
+  ) {}
 
   async signUp(input: SignUpInput): Promise<any> {
-    if (await this.usersService.findOneByName(input.name))
+    if (await this.usersService.findOneByName(input.email))
       throw new ConflictException('Username already exists');
 
     const user = this.usersRepo.create(input);
     user.password = AuthService.encryptPassword(user.password);
     const result = await this.usersRepo.save(user);
+    if (!result) {
+      return new BadRequestException();
+    }
     const account = await this.accountService.createAccount(result);
     return {
       email: result.email,
       name: result.name,
-      balance: account.balance
+      balance: account.balance,
     };
   }
 
@@ -44,7 +52,7 @@ export class AuthService {
   }
 
   async signIn(input: SignInInput): Promise<any> {
-    const user = await this.usersService.findOneByName(input.name);
+    const user = await this.usersService.findOneByName(input.email);
     if (!user) {
       return new NotFoundException('User not found');
     }
@@ -69,7 +77,7 @@ export class AuthService {
   }
 
   async validateUser(payload: JwtPayload): Promise<User> {
-    const user = await this.usersService.findOneByName(payload.name);
+    const user = await this.usersService.findOneByName(payload.email);
     return user;
   }
 }

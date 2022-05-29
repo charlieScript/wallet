@@ -34,4 +34,5 @@ const options: TypeOrmModuleOptions = {
   },
 };
 
+
 export = options;

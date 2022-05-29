@@ -26,15 +26,8 @@
     "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -f src/typeorm/ormconfig.postgres.ts",
     "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -f src/typeorm/ormconfig.postgres.ts",
     "schema:log": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js schema:log -f src/typeorm/ormconfig.postgres.ts",
-    "doc": "compodoc -p tsconfig.json -s"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,mjs,jsx,ts,tsx}": "eslint"
+    "doc": "compodoc -p tsconfig.json -s",
+    "heroku-postbuild": "npm run migration:run"
   },
   "prettier": "@twihike/prettier-config",
   "dependencies": {

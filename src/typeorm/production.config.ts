@@ -8,6 +8,7 @@ const options: TypeOrmModuleOptions = {
   ssl: {
     rejectUnauthorized: false,
   },
+  synchronize: true,
   logging: true,
   entities: [`${__dirname}/../**/*.entity.{ts,js}`],
   migrations: [`${__dirname}/../migrations/*.{ts,js}`],

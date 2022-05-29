@@ -28,7 +28,7 @@
     "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -f src/typeorm/ormconfig.postgres.ts",
     "schema:log": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js schema:log -f src/typeorm/ormconfig.postgres.ts",
     "doc": "compodoc -p tsconfig.json -s",
-    "heroku-postbuild": "npm run migration:run:prod"
+    "heroku-postbuild": "nest build && npm run migration:run:prod"
   },
   "prettier": "@twihike/prettier-config",
   "dependencies": {
